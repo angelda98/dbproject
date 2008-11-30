@@ -8,7 +8,7 @@
 </head>
 <body>
 <form>
-	<table border='0' width='824' cellpadding='0' cellspacing='0'>
+	<table class="tab" border='0' width='824' cellpadding='0' cellspacing='0'>
 		<tr>
 			<td><hr size='1' noshade></td>
  		</tr>

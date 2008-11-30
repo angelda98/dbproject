@@ -11,6 +11,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>우편번호 찾기</title>
+<link href="style.css" rel="stylesheet" type="text/css">
 <script language="JavaScript">
 function postnum(dong_name){
 	if(document.dong_name.dongid.value<1&&document.dong_name.dongid.value==""){
