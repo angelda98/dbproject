@@ -1,11 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <%@page import="com.beans.db.ConnManager"%>
 <%@page import="com.beans.etc.Utility"%>
 <%@page import="java.sql.Connection"%>
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.ResultSet"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<jsp:useBean id="movie" scope="page" class="com.beans.movie.Movie"></jsp:useBean>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
@@ -30,19 +32,13 @@
 	try{
 		String movieposter;
 		String movietitle;
-		String sql="select count(moviecode) from movie"; 
-			
-		mgr = ConnManager.getInstance();
-	    conn = mgr.GetConnection();
-		stmt = conn.createStatement();
 		
-		rs = stmt.executeQuery(sql);
-		
+		rs = movie.Moviecount();
 		if(rs.next()){
 			datacount = rs.getInt(1);
 		}
 		rs.close();
-	
+		movie.close();
 	
 		int pagesize = 10;
 		
@@ -61,8 +57,7 @@
 			if(abpage <=0)abpage=1;
 		}
 		
-		sql = "select movieposter,movietitle from movie order by moviecode desc";
-		rs = stmt.executeQuery(sql);
+		rs = movie.Movielist();
 		
 		for(int k=1; k<abpage; k++)rs.next();
 		
@@ -93,18 +88,14 @@
 			gopage = mypage+1;
 			out.print("<a href=MovieList.jsp?mypage="+gopage+">다음>></a>");
 		}
-
-		if(rs!=null){
-			rs.close();
-		}
+		rs.close();
+		movie.close();
 
 	}catch(Exception e){
 		e.printStackTrace();
 	}
 	finally{
 		if(rs!=null){rs.close();}
-		if(stmt!=null){stmt.close();}
-		if(conn!=null){conn.close();}
 	}
 %>
 	

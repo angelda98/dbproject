@@ -29,6 +29,9 @@ function post_search()	{
 </script>
 </head>
 <body bgcolor="white">
+<%
+String id = (String)session.getAttribute("id");
+if(id==null){%>
 <div id="bone">
 	<div id="header">
 	<div id="register">
@@ -178,5 +181,20 @@ function post_search()	{
 </div>
 </div>
 </div>
+<%}else{%>
+		<table>
+			<tr>
+				<td>
+					로그아웃 후 이용해 주세요..
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href = "../login/Logout.jsp">[로그아웃]</a>
+					<a href = "../main/main.jsp">[메인으로]</a>
+				</td>
+			</tr>	
+		</table>
+<%} %>
 </body>
 </html>

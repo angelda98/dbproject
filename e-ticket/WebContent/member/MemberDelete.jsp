@@ -25,6 +25,7 @@ if(session.getAttribute("id")==null){
 		</table>
 	<%
 }else{
+	session.invalidate();
 	mem.MemberDelete(id);
 	%>
 	<table>
