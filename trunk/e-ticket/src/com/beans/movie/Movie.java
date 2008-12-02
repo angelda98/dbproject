@@ -10,6 +10,7 @@ public class Movie {
 	ConnManager mgr = null;
 	Connection conn = null;
 	PreparedStatement pstmt = null;
+	Statement stmt = null;
 	ResultSet rs = null;
 	Utility util = new Utility();
 	
@@ -27,7 +28,7 @@ public class Movie {
 	String genre="";
 	String playdate="";
 	String theatername="";
-
+		
 	public void setMovietitle(String movietitle){
 		this.movietitle = util.getHan(movietitle);
 	}
@@ -90,7 +91,38 @@ public class Movie {
 	public void close() throws SQLException{
 		if(rs!=null)rs.close();
 		if(pstmt!=null)pstmt.close();
+		if(stmt!=null)stmt.close();
 		if(conn!=null)conn.close();
+	}
+	
+	public ResultSet Moviecount(){
+		try{
+			String sql="select count(moviecode) from movie"; 
+		
+			mgr = ConnManager.getInstance();
+			conn = mgr.GetConnection();
+			stmt = conn.createStatement();
+		
+			rs = stmt.executeQuery(sql);
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return rs;
+	}
+	
+	public ResultSet Movielist(){
+		try{
+			String sql="select movieposter,movietitle from movie order by moviecode desc";
+		
+			mgr = ConnManager.getInstance();
+			conn = mgr.GetConnection();
+			stmt = conn.createStatement();
+		
+			rs = stmt.executeQuery(sql);
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return rs;
 	}
 	
 	public void MovieDirector() throws SQLException{
@@ -121,6 +153,21 @@ public class Movie {
 			close();
 		}
 	
+	}
+	
+	public ResultSet Movietitle(String theatername, String playdate) throws SQLException{
+		try{
+			sql = "select distinct(movietitle), m.moviecode from movieschedule s, theater t, movie m where t.theatercode = s.theatercode(+) and m.moviecode = s.moviecode and theatername=? and playdate=? order by m.moviecode";
+			mgr = ConnManager.getInstance();
+			conn = mgr.GetConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, theatername);
+			pstmt.setString(2, playdate);
+			rs = pstmt.executeQuery();
+		}catch(SQLException e){
+			e.printStackTrace();
+		}
+		return rs;
 	}
 	
 	public void MovieActor() throws SQLException{

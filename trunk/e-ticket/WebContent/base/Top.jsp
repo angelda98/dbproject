@@ -71,9 +71,11 @@ id = (String)session.getAttribute("id");
 				<tr>
 					<td height = "20" colspan = "2" align = "right" valign = "top">
 						<a href = "../movie/MovieList.jsp"><font color="#ca582a"><b>영화정보</b></font> </a> |
-						<a href = ""><font color="#ca582a"><b>예매</b></font> </a> |
+						<a href = "../reservation/ReservationForm.jsp"><font color="#ca582a"><b>예매</b></font> </a> |
 						<a href = "../schedule/MovieSchedule.jsp"><font color="#ca582a"><b>영화시간 </b></font></a> |
+						<a href = "../theater/TheaterInfo.jsp"><font color="#ca582a"><b>극장정보 </b></font></a> |
 						<a href = "../member/MemberJoin.jsp"><font color="#ca582a"><b>회원가입</b></font></a>&nbsp;&nbsp;&nbsp;
+						<a href = "../reservation/ReservationTicketInfo.jsp"><font color="#ca582a"><b>예메확인</b></font></a>&nbsp;&nbsp;&nbsp;
 					</td>	
 				</tr>
 			</table>

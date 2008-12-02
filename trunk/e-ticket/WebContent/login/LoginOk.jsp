@@ -9,8 +9,8 @@
 </head>
 <body>
 <%
-String id;
-String ps;
+String id="";
+String ps="";
 
 try{
 	id = request.getParameter("id");
@@ -39,7 +39,7 @@ try{
 		session = request.getSession(true);
 		session.putValue("id",id);
 		session.putValue("ps",ps);
-		response.sendRedirect("../base/Top.jsp");
+		response.sendRedirect("../main/main.jsp");
 	}
 
 }catch(Exception e){

@@ -19,7 +19,7 @@ function postnum(dong_name){
 		return false;
 	}
 	else{
-		document.dong_name.subnit();
+		document.dong_name.submit();
 	}
 }
 

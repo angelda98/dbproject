@@ -36,7 +36,7 @@ if(result==false){
 	</tr>
 	<tr>
 		<td>
-			<a href="./MemberJoin.jsp">[다시 로그인 ]</a>
+			<a href="./MemberJoin.jsp">[다시 회원가입]</a>
 		</td>
 		<td>
 			<a href="../main/main.jsp">[메인으로 ]</a>

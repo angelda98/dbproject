@@ -3,25 +3,25 @@ package com.beans.member;
 import com.beans.etc.*;
 
 public class Member {
-	String id;
-	String pass;
-	String name;
-	String birth;
-	String jumin;
-	String email;
-	String email1;
-	String email2;
-	String zipcode;
-	String addr;
-	String addr1;
-	String mobile;
-	String mobile1;
-	String mobile2;
-	String phone;
-	String phone1;
-	String phone2;
-	String homepage;
-	String job;
+	String id="";
+	String pass="";
+	String name="";
+	String birth="";
+	String jumin="";
+	String email="";
+	String email1="";
+	String email2="";
+	String zipcode="";
+	String addr="";
+	String addr1="";
+	String mobile="";
+	String mobile1="";
+	String mobile2="";
+	String phone="";
+	String phone1="";
+	String phone2="";
+	String homepage="";
+	String job="";
 	String description;
 	
 	public Member() {

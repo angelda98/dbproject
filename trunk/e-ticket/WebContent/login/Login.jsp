@@ -20,8 +20,7 @@ function loginCheck(){
 	document.member.submit();
 }
 </script>
-<title>로그인</title>]
-<%@include file="../base/Top.jsp" %>
+<title>로그인</title>
 </head>
 <body>
 
@@ -41,10 +40,9 @@ function loginCheck(){
 									<td rowspan = "2" align = "center"><input type="Image" src = "../login/image/login2.jpg" name="submit" value="로그인" onclick="loginCheck()"></td>
 								</tr>
 								<tr>
-									<td class = "login" align = "right"><font color = "#df3835"><b>비밀번호 :</b></font></td class = "login" ><td><input type = "pass" name = "pass" size = "15"></td>
+									<td class = "login" align = "right"><font color = "#df3835"><b>비밀번호 :</b></font></td class = "login" ><td><input type = "password" name = "pass" size = "15"></td>
 								</tr>
 								<tr>
-									</td>
 								</tr>
 							</table>
 						</td>

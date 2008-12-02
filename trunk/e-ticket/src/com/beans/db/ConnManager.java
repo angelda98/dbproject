@@ -29,7 +29,7 @@ public class ConnManager {
 			e.printStackTrace();
 		}
 	
-		String url = "jdbc:oracle:thin:@117.17.153.192:1521:XE";
+		String url = "jdbc:oracle:thin:@localhost:1521:XE";
 //		String id = "cgy77777";
 	//	String ps = "cgy30120";
 		
