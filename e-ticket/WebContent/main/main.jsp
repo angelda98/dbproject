@@ -51,12 +51,17 @@ function getFlash(swfName,wt,ht,id){
 //</div>
  
  %>
-<div id="header">
-				<div id="nav">	
-					<b><font class = "menu">스케줄/예약</font></b>
-			</div>
-		</div>
-		<div id="shadow"></div>	
+<tablie border=0>
+				<tr><td>	
+					<b><font class = "menu">최신영화
+					<img src=mi.jpg weight="300" height="380"></font></b>
+					</td>
+			
+			<td><img src=quan.jpg weight="300" height="380"></td>
+			</tr>
+			
+			
+</table>
 
 </body>
 <%@include file="../base/Floor.jsp" %>
